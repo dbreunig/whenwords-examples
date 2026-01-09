@@ -1,0 +1,3 @@
+module whenwordsPackageTests {
+    header "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/include/whenwordsPackageTests-Swift.h"
+}

@@ -1,0 +1,3 @@
+module Whenwords {
+    header "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/include/Whenwords-Swift.h"
+}

@@ -1,0 +1,119 @@
+Function,Test Name,Input1,Input2,Input3,Expected,Formula,Pass
+timeago,just now - identical timestamps,1704067200,1704067200,,just now,=WW_TIMEAGO(B3,C3),=F3=G3
+timeago,just now - 30 seconds ago,1704067170,1704067200,,just now,=WW_TIMEAGO(B4,C4),=F4=G4
+timeago,just now - 44 seconds ago,1704067156,1704067200,,just now,=WW_TIMEAGO(B5,C5),=F5=G5
+timeago,1 minute ago - 45 seconds,1704067155,1704067200,,1 minute ago,=WW_TIMEAGO(B6,C6),=F6=G6
+timeago,1 minute ago - 89 seconds,1704067111,1704067200,,1 minute ago,=WW_TIMEAGO(B7,C7),=F7=G7
+timeago,2 minutes ago - 90 seconds,1704067110,1704067200,,2 minutes ago,=WW_TIMEAGO(B8,C8),=F8=G8
+timeago,30 minutes ago,1704065400,1704067200,,30 minutes ago,=WW_TIMEAGO(B9,C9),=F9=G9
+timeago,44 minutes ago,1704064560,1704067200,,44 minutes ago,=WW_TIMEAGO(B10,C10),=F10=G10
+timeago,1 hour ago - 45 minutes,1704064500,1704067200,,1 hour ago,=WW_TIMEAGO(B11,C11),=F11=G11
+timeago,1 hour ago - 89 minutes,1704061860,1704067200,,1 hour ago,=WW_TIMEAGO(B12,C12),=F12=G12
+timeago,2 hours ago - 90 minutes,1704061800,1704067200,,2 hours ago,=WW_TIMEAGO(B13,C13),=F13=G13
+timeago,5 hours ago,1704049200,1704067200,,5 hours ago,=WW_TIMEAGO(B14,C14),=F14=G14
+timeago,21 hours ago,1703991600,1704067200,,21 hours ago,=WW_TIMEAGO(B15,C15),=F15=G15
+timeago,1 day ago - 22 hours,1703988000,1704067200,,1 day ago,=WW_TIMEAGO(B16,C16),=F16=G16
+timeago,1 day ago - 35 hours,1703941200,1704067200,,1 day ago,=WW_TIMEAGO(B17,C17),=F17=G17
+timeago,2 days ago - 36 hours,1703937600,1704067200,,2 days ago,=WW_TIMEAGO(B18,C18),=F18=G18
+timeago,7 days ago,1703462400,1704067200,,7 days ago,=WW_TIMEAGO(B19,C19),=F19=G19
+timeago,25 days ago,1701907200,1704067200,,25 days ago,=WW_TIMEAGO(B20,C20),=F20=G20
+timeago,1 month ago - 26 days,1701820800,1704067200,,1 month ago,=WW_TIMEAGO(B21,C21),=F21=G21
+timeago,1 month ago - 45 days,1700179200,1704067200,,1 month ago,=WW_TIMEAGO(B22,C22),=F22=G22
+timeago,2 months ago - 46 days,1700092800,1704067200,,2 months ago,=WW_TIMEAGO(B23,C23),=F23=G23
+timeago,6 months ago,1688169600,1704067200,,6 months ago,=WW_TIMEAGO(B24,C24),=F24=G24
+timeago,10 months ago - 319 days,1676505600,1704067200,,10 months ago,=WW_TIMEAGO(B25,C25),=F25=G25
+timeago,1 year ago - 320 days,1676419200,1704067200,,1 year ago,=WW_TIMEAGO(B26,C26),=F26=G26
+timeago,1 year ago - 547 days,1656806400,1704067200,,1 year ago,=WW_TIMEAGO(B27,C27),=F27=G27
+timeago,2 years ago - 548 days,1656720000,1704067200,,2 years ago,=WW_TIMEAGO(B28,C28),=F28=G28
+timeago,5 years ago,1546300800,1704067200,,5 years ago,=WW_TIMEAGO(B29,C29),=F29=G29
+timeago,future - in just now (30 seconds),1704067230,1704067200,,just now,=WW_TIMEAGO(B30,C30),=F30=G30
+timeago,future - in 1 minute,1704067260,1704067200,,in 1 minute,=WW_TIMEAGO(B31,C31),=F31=G31
+timeago,future - in 5 minutes,1704067500,1704067200,,in 5 minutes,=WW_TIMEAGO(B32,C32),=F32=G32
+timeago,future - in 1 hour,1704070200,1704067200,,in 1 hour,=WW_TIMEAGO(B33,C33),=F33=G33
+timeago,future - in 3 hours,1704078000,1704067200,,in 3 hours,=WW_TIMEAGO(B34,C34),=F34=G34
+timeago,future - in 1 day,1704150000,1704067200,,in 1 day,=WW_TIMEAGO(B35,C35),=F35=G35
+timeago,future - in 2 days,1704240000,1704067200,,in 2 days,=WW_TIMEAGO(B36,C36),=F36=G36
+timeago,future - in 1 month,1706745600,1704067200,,in 1 month,=WW_TIMEAGO(B37,C37),=F37=G37
+timeago,future - in 1 year,1735689600,1704067200,,in 1 year,=WW_TIMEAGO(B38,C38),=F38=G38
+duration,zero seconds,0,,,0 seconds,=WW_DURATION(B39),=F39=G39
+duration,1 second,1,,,1 second,=WW_DURATION(B40),=F40=G40
+duration,45 seconds,45,,,45 seconds,=WW_DURATION(B41),=F41=G41
+duration,1 minute,60,,,1 minute,=WW_DURATION(B42),=F42=G42
+duration,1 minute 30 seconds,90,,,"1 minute, 30 seconds",=WW_DURATION(B43),=F43=G43
+duration,2 minutes,120,,,2 minutes,=WW_DURATION(B44),=F44=G44
+duration,1 hour,3600,,,1 hour,=WW_DURATION(B45),=F45=G45
+duration,1 hour 1 minute,3661,,,"1 hour, 1 minute",=WW_DURATION(B46),=F46=G46
+duration,1 hour 30 minutes,5400,,,"1 hour, 30 minutes",=WW_DURATION(B47),=F47=G47
+duration,2 hours 30 minutes,9000,,,"2 hours, 30 minutes",=WW_DURATION(B48),=F48=G48
+duration,1 day,86400,,,1 day,=WW_DURATION(B49),=F49=G49
+duration,1 day 2 hours,93600,,,"1 day, 2 hours",=WW_DURATION(B50),=F50=G50
+duration,7 days,604800,,,7 days,=WW_DURATION(B51),=F51=G51
+duration,1 month (30 days),2592000,,,1 month,=WW_DURATION(B52),=F52=G52
+duration,1 year (365 days),31536000,,,1 year,=WW_DURATION(B53),=F53=G53
+duration,1 year 2 months,36720000,,,"1 year, 2 months",=WW_DURATION(B54),=F54=G54
+duration,compact - 1h 1m,3661,TRUE,,1h 1m,=WW_DURATION(B55,C55),=F55=G55
+duration,compact - 2h 30m,9000,TRUE,,2h 30m,=WW_DURATION(B56,C56),=F56=G56
+duration,compact - 1d 2h,93600,TRUE,,1d 2h,=WW_DURATION(B57,C57),=F57=G57
+duration,compact - 45s,45,TRUE,,45s,=WW_DURATION(B58,C58),=F58=G58
+duration,compact - 0s,0,TRUE,,0s,=WW_DURATION(B59,C59),=F59=G59
+duration,max_units 1 - hours only,3661,FALSE,1,1 hour,=WW_DURATION(B60,C60,D60),=F60=G60
+duration,max_units 1 - days only,93600,FALSE,1,1 day,=WW_DURATION(B61,C61,D61),=F61=G61
+duration,max_units 3,93661,FALSE,3,"1 day, 2 hours, 1 minute",=WW_DURATION(B62,C62,D62),=F62=G62
+duration,compact max_units 1,9000,TRUE,1,2h,=WW_DURATION(B63,C63,D63),=F63=G63
+parse_duration,compact hours minutes,2h30m,,,9000,=WW_PARSE_DURATION(B64),=F64=G64
+parse_duration,compact with space,2h 30m,,,9000,=WW_PARSE_DURATION(B65),=F65=G65
+parse_duration,compact with comma,"2h, 30m",,,9000,=WW_PARSE_DURATION(B66),=F66=G66
+parse_duration,verbose,2 hours 30 minutes,,,9000,=WW_PARSE_DURATION(B67),=F67=G67
+parse_duration,verbose with and,2 hours and 30 minutes,,,9000,=WW_PARSE_DURATION(B68),=F68=G68
+parse_duration,verbose with comma and,"2 hours, and 30 minutes",,,9000,=WW_PARSE_DURATION(B69),=F69=G69
+parse_duration,decimal hours,2.5 hours,,,9000,=WW_PARSE_DURATION(B70),=F70=G70
+parse_duration,decimal compact,1.5h,,,5400,=WW_PARSE_DURATION(B71),=F71=G71
+parse_duration,single unit minutes verbose,90 minutes,,,5400,=WW_PARSE_DURATION(B72),=F72=G72
+parse_duration,single unit minutes compact,90m,,,5400,=WW_PARSE_DURATION(B73),=F73=G73
+parse_duration,single unit min,90min,,,5400,=WW_PARSE_DURATION(B74),=F74=G74
+parse_duration,colon notation h:mm,2:30,,,9000,=WW_PARSE_DURATION(B75),=F75=G75
+parse_duration,colon notation h:mm:ss,1:30:00,,,5400,=WW_PARSE_DURATION(B76),=F76=G76
+parse_duration,colon notation with seconds,0:05:30,,,330,=WW_PARSE_DURATION(B77),=F77=G77
+parse_duration,days verbose,2 days,,,172800,=WW_PARSE_DURATION(B78),=F78=G78
+parse_duration,days compact,2d,,,172800,=WW_PARSE_DURATION(B79),=F79=G79
+parse_duration,weeks verbose,1 week,,,604800,=WW_PARSE_DURATION(B80),=F80=G80
+parse_duration,weeks compact,1w,,,604800,=WW_PARSE_DURATION(B81),=F81=G81
+parse_duration,mixed verbose,"1 day, 2 hours, and 30 minutes",,,95400,=WW_PARSE_DURATION(B82),=F82=G82
+parse_duration,mixed compact,1d 2h 30m,,,95400,=WW_PARSE_DURATION(B83),=F83=G83
+parse_duration,seconds only verbose,45 seconds,,,45,=WW_PARSE_DURATION(B84),=F84=G84
+parse_duration,seconds compact s,45s,,,45,=WW_PARSE_DURATION(B85),=F85=G85
+parse_duration,seconds compact sec,45sec,,,45,=WW_PARSE_DURATION(B86),=F86=G86
+parse_duration,hours hr,2hr,,,7200,=WW_PARSE_DURATION(B87),=F87=G87
+parse_duration,hours hrs,2hrs,,,7200,=WW_PARSE_DURATION(B88),=F88=G88
+parse_duration,minutes mins,30mins,,,1800,=WW_PARSE_DURATION(B89),=F89=G89
+parse_duration,case insensitive,2H 30M,,,9000,=WW_PARSE_DURATION(B90),=F90=G90
+parse_duration,whitespace tolerance,  2 hours   30 minutes  ,,,9000,=WW_PARSE_DURATION(B91),=F91=G91
+human_date,today,1705276800,1705276800,,Today,=WW_HUMAN_DATE(B92,C92),=F92=G92
+human_date,today - same day different time,1705320000,1705276800,,Today,=WW_HUMAN_DATE(B93,C93),=F93=G93
+human_date,yesterday,1705190400,1705276800,,Yesterday,=WW_HUMAN_DATE(B94,C94),=F94=G94
+human_date,tomorrow,1705363200,1705276800,,Tomorrow,=WW_HUMAN_DATE(B95,C95),=F95=G95
+human_date,last Sunday (1 day before Monday),1705190400,1705276800,,Yesterday,=WW_HUMAN_DATE(B96,C96),=F96=G96
+human_date,last Saturday (2 days ago),1705104000,1705276800,,Last Saturday,=WW_HUMAN_DATE(B97,C97),=F97=G97
+human_date,last Friday (3 days ago),1705017600,1705276800,,Last Friday,=WW_HUMAN_DATE(B98,C98),=F98=G98
+human_date,last Thursday (4 days ago),1704931200,1705276800,,Last Thursday,=WW_HUMAN_DATE(B99,C99),=F99=G99
+human_date,last Wednesday (5 days ago),1704844800,1705276800,,Last Wednesday,=WW_HUMAN_DATE(B100,C100),=F100=G100
+human_date,last Tuesday (6 days ago),1704758400,1705276800,,Last Tuesday,=WW_HUMAN_DATE(B101,C101),=F101=G101
+human_date,last Monday (7 days ago) - becomes date,1704672000,1705276800,,January 8,=WW_HUMAN_DATE(B102,C102),=F102=G102
+human_date,this Tuesday (1 day future),1705363200,1705276800,,Tomorrow,=WW_HUMAN_DATE(B103,C103),=F103=G103
+human_date,this Wednesday (2 days future),1705449600,1705276800,,This Wednesday,=WW_HUMAN_DATE(B104,C104),=F104=G104
+human_date,this Thursday (3 days future),1705536000,1705276800,,This Thursday,=WW_HUMAN_DATE(B105,C105),=F105=G105
+human_date,this Sunday (6 days future),1705795200,1705276800,,This Sunday,=WW_HUMAN_DATE(B106,C106),=F106=G106
+human_date,next Monday (7 days future) - becomes date,1705881600,1705276800,,January 22,=WW_HUMAN_DATE(B107,C107),=F107=G107
+human_date,same year different month,1709251200,1705276800,,March 1,=WW_HUMAN_DATE(B108,C108),=F108=G108
+human_date,same year end of year,1735603200,1705276800,,December 31,=WW_HUMAN_DATE(B109,C109),=F109=G109
+human_date,previous year,1672531200,1705276800,,"January 1, 2023",=WW_HUMAN_DATE(B110,C110),=F110=G110
+human_date,next year,1736121600,1705276800,,"January 6, 2025",=WW_HUMAN_DATE(B111,C111),=F111=G111
+date_range,same day,1705276800,1705276800,,"January 15, 2024",=WW_DATE_RANGE(B112,C112),=F112=G112
+date_range,same day different times,1705276800,1705320000,,"January 15, 2024",=WW_DATE_RANGE(B113,C113),=F113=G113
+date_range,consecutive days same month,1705276800,1705363200,,"January 15–16, 2024",=WW_DATE_RANGE(B114,C114),=F114=G114
+date_range,same month range,1705276800,1705881600,,"January 15–22, 2024",=WW_DATE_RANGE(B115,C115),=F115=G115
+date_range,same year different months,1705276800,1707955200,,"January 15 – February 15, 2024",=WW_DATE_RANGE(B116,C116),=F116=G116
+date_range,different years,1703721600,1705276800,,"December 28, 2023 – January 15, 2024",=WW_DATE_RANGE(B117,C117),=F117=G117
+date_range,full year span,1704067200,1735603200,,"January 1 – December 31, 2024",=WW_DATE_RANGE(B118,C118),=F118=G118
+date_range,swapped inputs - should auto-correct,1705881600,1705276800,,"January 15–22, 2024",=WW_DATE_RANGE(B119,C119),=F119=G119
+date_range,multi-year span,1672531200,1735689600,,"January 1, 2023 – January 1, 2025",=WW_DATE_RANGE(B120,C120),=F120=G120

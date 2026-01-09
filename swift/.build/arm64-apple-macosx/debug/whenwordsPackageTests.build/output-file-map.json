@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/master.swiftdeps"
+  },
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.d",
+    "object": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.dia"
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.xctest/Contents/MacOS/whenwordsPackageTests",
+      "packagePath" : "/Users/dbreunig/Development/whenwords/examples/swift",
+      "productName" : "whenwordsPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Whenwords-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources",
+      "importPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Whenwords",
+      "moduleOutputPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule",
+      "objects" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/include/Whenwords-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift"
+      ],
+      "tempsPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.WhenwordsTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources",
+      "importPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "WhenwordsTests",
+      "moduleOutputPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule",
+      "objects" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift"
+      ],
+      "tempsPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.whenwordsPackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources",
+      "importPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "whenwordsPackageTests",
+      "moduleOutputPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/include/whenwordsPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Whenwords" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Whenwords",
+      "-c",
+      "/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift",
+      "-I",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/include/Whenwords-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "WhenwordsTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "WhenwordsTests",
+      "-c",
+      "/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift",
+      "-I",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "whenwordsPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "whenwordsPackageTests",
+      "-c",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/include/whenwordsPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Whenwords" : [
+
+    ],
+    "WhenwordsTests" : [
+      "Whenwords"
+    ],
+    "whenwordsPackageTests" : [
+      "WhenwordsTests",
+      "Whenwords"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources"
+    },
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources"
+    },
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    },
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources"
+    },
+    "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList"
+    }
+  }
+}

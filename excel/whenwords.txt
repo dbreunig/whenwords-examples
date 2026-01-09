@@ -1,0 +1,376 @@
+================================================================================
+WHENWORDS FOR EXCEL - LAMBDA Function Definitions
+================================================================================
+
+Human-friendly time formatting and parsing for Microsoft Excel.
+Requires Excel 365 or Excel for Web (LAMBDA function support).
+
+INSTALLATION:
+1. Open Excel
+2. Go to Formulas > Name Manager (or press Ctrl+F3)
+3. Click "New" and create each function below:
+   - Name: The function name (e.g., WW_TIMEAGO)
+   - Refers to: Paste the formula (starting with =LAMBDA...)
+   - Comment: Optional description
+4. Click OK for each, then Close
+
+================================================================================
+HELPER FUNCTIONS (Required - Add these first)
+================================================================================
+
+-------------------------------------------------------------------------------
+Name: WW_PLURALIZE
+Comment: Returns singular or plural form based on count
+-------------------------------------------------------------------------------
+=LAMBDA(n, singular, plural,
+    IF(n = 1, singular, plural)
+)
+
+-------------------------------------------------------------------------------
+Name: WW_UNIX_TO_DATE
+Comment: Converts Unix timestamp (seconds) to Excel date serial
+-------------------------------------------------------------------------------
+=LAMBDA(unix_ts,
+    unix_ts / 86400 + 25569
+)
+
+-------------------------------------------------------------------------------
+Name: WW_DATE_TO_UNIX
+Comment: Converts Excel date serial to Unix timestamp (seconds)
+-------------------------------------------------------------------------------
+=LAMBDA(excel_date,
+    (excel_date - 25569) * 86400
+)
+
+-------------------------------------------------------------------------------
+Name: WW_ABS_ROUND
+Comment: Rounds to nearest integer using half-up rounding
+-------------------------------------------------------------------------------
+=LAMBDA(n,
+    FLOOR(n + 0.5, 1)
+)
+
+================================================================================
+MAIN FUNCTIONS
+================================================================================
+
+-------------------------------------------------------------------------------
+Name: WW_TIMEAGO
+Comment: Returns human-readable relative time string
+Arguments: timestamp (Unix seconds), reference (Unix seconds)
+-------------------------------------------------------------------------------
+=LAMBDA(timestamp, reference,
+    LET(
+        diff, reference - timestamp,
+        abs_diff, ABS(diff),
+        is_future, diff < 0,
+
+        seconds, abs_diff,
+        minutes, seconds / 60,
+        hours, minutes / 60,
+        days, hours / 24,
+        months, days / 30.44,
+        years, days / 365,
+
+        result, IF(seconds < 45, "just now",
+            IF(seconds < 90, IF(is_future, "in 1 minute", "1 minute ago"),
+            IF(minutes < 45,
+                LET(n, WW_ABS_ROUND(minutes),
+                    unit, WW_PLURALIZE(n, "minute", "minutes"),
+                    IF(is_future, "in " & n & " " & unit, n & " " & unit & " ago")),
+            IF(minutes < 90, IF(is_future, "in 1 hour", "1 hour ago"),
+            IF(hours < 22,
+                LET(n, WW_ABS_ROUND(hours),
+                    unit, WW_PLURALIZE(n, "hour", "hours"),
+                    IF(is_future, "in " & n & " " & unit, n & " " & unit & " ago")),
+            IF(hours < 36, IF(is_future, "in 1 day", "1 day ago"),
+            IF(days < 26,
+                LET(n, WW_ABS_ROUND(days),
+                    unit, WW_PLURALIZE(n, "day", "days"),
+                    IF(is_future, "in " & n & " " & unit, n & " " & unit & " ago")),
+            IF(days < 46, IF(is_future, "in 1 month", "1 month ago"),
+            IF(days < 320,
+                LET(n, WW_ABS_ROUND(months),
+                    unit, WW_PLURALIZE(n, "month", "months"),
+                    IF(is_future, "in " & n & " " & unit, n & " " & unit & " ago")),
+            IF(days < 548, IF(is_future, "in 1 year", "1 year ago"),
+                LET(n, WW_ABS_ROUND(years),
+                    unit, WW_PLURALIZE(n, "year", "years"),
+                    IF(is_future, "in " & n & " " & unit, n & " " & unit & " ago"))
+            )))))))))),
+
+        result
+    )
+)
+
+-------------------------------------------------------------------------------
+Name: WW_DURATION
+Comment: Formats a duration in seconds to human-readable string
+Arguments: seconds, [compact] (TRUE/FALSE), [max_units] (1-6, default 2)
+-------------------------------------------------------------------------------
+=LAMBDA(seconds, [compact], [max_units],
+    LET(
+        is_compact, IF(ISOMITTED(compact), FALSE, compact),
+        units_limit, IF(ISOMITTED(max_units), 2, max_units),
+
+        YEAR, 31536000,
+        MONTH, 2592000,
+        DAY, 86400,
+        HOUR, 3600,
+        MINUTE, 60,
+
+        _check_error, IF(seconds < 0, "ERROR: Negative duration", ""),
+
+        _years, FLOOR(seconds / YEAR, 1),
+        _rem1, seconds - _years * YEAR,
+        _months, FLOOR(_rem1 / MONTH, 1),
+        _rem2, _rem1 - _months * MONTH,
+        _days, FLOOR(_rem2 / DAY, 1),
+        _rem3, _rem2 - _days * DAY,
+        _hours, FLOOR(_rem3 / HOUR, 1),
+        _rem4, _rem3 - _hours * HOUR,
+        _minutes, FLOOR(_rem4 / MINUTE, 1),
+        _secs, _rem4 - _minutes * MINUTE,
+
+        y_str, IF(_years > 0, IF(is_compact, _years & "y", _years & " " & WW_PLURALIZE(_years, "year", "years")), ""),
+        mo_str, IF(_months > 0, IF(is_compact, _months & "mo", _months & " " & WW_PLURALIZE(_months, "month", "months")), ""),
+        d_str, IF(_days > 0, IF(is_compact, _days & "d", _days & " " & WW_PLURALIZE(_days, "day", "days")), ""),
+        h_str, IF(_hours > 0, IF(is_compact, _hours & "h", _hours & " " & WW_PLURALIZE(_hours, "hour", "hours")), ""),
+        m_str, IF(_minutes > 0, IF(is_compact, _minutes & "m", _minutes & " " & WW_PLURALIZE(_minutes, "minute", "minutes")), ""),
+        s_str, IF(_secs > 0, IF(is_compact, FLOOR(_secs, 1) & "s", FLOOR(_secs, 1) & " " & WW_PLURALIZE(FLOOR(_secs, 1), "second", "seconds")), ""),
+
+        parts, FILTER({y_str; mo_str; d_str; h_str; m_str; s_str}, {y_str; mo_str; d_str; h_str; m_str; s_str} <> ""),
+        limited_parts, IF(ROWS(parts) > units_limit, INDEX(parts, SEQUENCE(units_limit)), parts),
+
+        sep, IF(is_compact, " ", ", "),
+
+        result, IF(_check_error <> "", _check_error,
+            IF(seconds = 0, IF(is_compact, "0s", "0 seconds"),
+            TEXTJOIN(sep, TRUE, limited_parts))),
+
+        result
+    )
+)
+
+-------------------------------------------------------------------------------
+Name: WW_PARSE_DURATION
+Comment: Parses duration string to seconds
+Arguments: text (e.g., "2h 30m", "2:30", "2 hours and 30 minutes")
+-------------------------------------------------------------------------------
+=LAMBDA(text,
+    LET(
+        cleaned, TRIM(text),
+        lower_text, LOWER(cleaned),
+
+        _is_empty, LEN(cleaned) = 0,
+        _is_negative, LEFT(cleaned, 1) = "-",
+
+        _is_colon, ISNUMBER(SEARCH(":", cleaned)),
+
+        _colon_result, IF(_is_colon,
+            LET(
+                colon_pos1, SEARCH(":", cleaned),
+                before_colon, LEFT(cleaned, colon_pos1 - 1),
+                after_colon, MID(cleaned, colon_pos1 + 1, 100),
+                has_second_colon, ISNUMBER(SEARCH(":", after_colon)),
+
+                hours, VALUE(before_colon),
+
+                result, IF(has_second_colon,
+                    LET(
+                        colon_pos2, SEARCH(":", after_colon),
+                        mins, VALUE(LEFT(after_colon, colon_pos2 - 1)),
+                        secs, VALUE(MID(after_colon, colon_pos2 + 1, 100)),
+                        hours * 3600 + mins * 60 + secs
+                    ),
+                    LET(
+                        mins, VALUE(after_colon),
+                        hours * 3600 + mins * 60
+                    )
+                ),
+                result
+            ),
+            0
+        ),
+
+        _no_units_text, SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(
+            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(
+            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(
+            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(
+            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(
+            SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(lower_text,
+            "seconds", "~S~"), "second", "~S~"), "secs", "~S~"), "sec", "~S~"), "s", "~S~"),
+            "minutes", "~M~"), "minute", "~M~"), "mins", "~M~"), "min", "~M~"), "m", "~M~"),
+            "hours", "~H~"), "hour", "~H~"), "hrs", "~H~"), "hr", "~H~"), "h", "~H~"),
+            "days", "~D~"), "day", "~D~"), "d", "~D~"),
+            "weeks", "~W~"), "week", "~W~"), "wks", "~W~"), "wk", "~W~"), "w", "~W~"),
+            "and", ""), ",", " "), "  ", " "), "  ", " "), "  ", " "),
+
+        _extract_weeks, LET(
+            pos, SEARCH("~W~", _no_units_text),
+            IF(ISERROR(pos), 0,
+                LET(
+                    before, TRIM(LEFT(_no_units_text, pos - 1)),
+                    parts, TEXTSPLIT(before, " "),
+                    last_part, INDEX(parts, COLUMNS(parts)),
+                    VALUE(last_part) * 604800
+                )
+            )
+        ),
+
+        _extract_days, LET(
+            pos, SEARCH("~D~", _no_units_text),
+            IF(ISERROR(pos), 0,
+                LET(
+                    before, TRIM(LEFT(_no_units_text, pos - 1)),
+                    parts, TEXTSPLIT(before, " "),
+                    last_part, INDEX(parts, COLUMNS(parts)),
+                    VALUE(last_part) * 86400
+                )
+            )
+        ),
+
+        _extract_hours, LET(
+            pos, SEARCH("~H~", _no_units_text),
+            IF(ISERROR(pos), 0,
+                LET(
+                    before, TRIM(LEFT(_no_units_text, pos - 1)),
+                    parts, TEXTSPLIT(before, " "),
+                    last_part, INDEX(parts, COLUMNS(parts)),
+                    VALUE(last_part) * 3600
+                )
+            )
+        ),
+
+        _extract_mins, LET(
+            pos, SEARCH("~M~", _no_units_text),
+            IF(ISERROR(pos), 0,
+                LET(
+                    before, TRIM(LEFT(_no_units_text, pos - 1)),
+                    parts, TEXTSPLIT(before, " "),
+                    last_part, INDEX(parts, COLUMNS(parts)),
+                    VALUE(last_part) * 60
+                )
+            )
+        ),
+
+        _extract_secs, LET(
+            pos, SEARCH("~S~", _no_units_text),
+            IF(ISERROR(pos), 0,
+                LET(
+                    before, TRIM(LEFT(_no_units_text, pos - 1)),
+                    parts, TEXTSPLIT(before, " "),
+                    last_part, INDEX(parts, COLUMNS(parts)),
+                    VALUE(last_part)
+                )
+            )
+        ),
+
+        _unit_result, _extract_weeks + _extract_days + _extract_hours + _extract_mins + _extract_secs,
+
+        _has_units, OR(
+            ISNUMBER(SEARCH("~", _no_units_text))
+        ),
+
+        _final, IF(_is_empty, "#ERROR: Empty string",
+            IF(_is_negative, "#ERROR: Negative duration",
+            IF(_is_colon, _colon_result,
+            IF(NOT(_has_units), "#ERROR: No valid units",
+            ROUND(_unit_result, 0))))),
+
+        _final
+    )
+)
+
+-------------------------------------------------------------------------------
+Name: WW_HUMAN_DATE
+Comment: Returns contextual date string (Today, Yesterday, Last Monday, etc.)
+Arguments: timestamp (Unix seconds), reference (Unix seconds)
+-------------------------------------------------------------------------------
+=LAMBDA(timestamp, reference,
+    LET(
+        ts_date, FLOOR(WW_UNIX_TO_DATE(timestamp), 1),
+        ref_date, FLOOR(WW_UNIX_TO_DATE(reference), 1),
+
+        day_diff, ts_date - ref_date,
+
+        ts_weekday, WEEKDAY(ts_date, 2),
+        weekday_name, CHOOSE(ts_weekday, "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"),
+
+        ts_month, TEXT(ts_date, "mmmm"),
+        ts_day, DAY(ts_date),
+        ts_year, YEAR(ts_date),
+        ref_year, YEAR(ref_date),
+
+        result, IF(day_diff = 0, "Today",
+            IF(day_diff = -1, "Yesterday",
+            IF(day_diff = 1, "Tomorrow",
+            IF(AND(day_diff > -7, day_diff < 0), "Last " & weekday_name,
+            IF(AND(day_diff > 1, day_diff < 7), "This " & weekday_name,
+            IF(ts_year = ref_year, ts_month & " " & ts_day,
+            ts_month & " " & ts_day & ", " & ts_year)))))),
+
+        result
+    )
+)
+
+-------------------------------------------------------------------------------
+Name: WW_DATE_RANGE
+Comment: Formats a date range with smart abbreviation
+Arguments: start (Unix seconds), end (Unix seconds)
+-------------------------------------------------------------------------------
+=LAMBDA(start_ts, end_ts,
+    LET(
+        _start, IF(start_ts > end_ts, end_ts, start_ts),
+        _end, IF(start_ts > end_ts, start_ts, end_ts),
+
+        start_date, FLOOR(WW_UNIX_TO_DATE(_start), 1),
+        end_date, FLOOR(WW_UNIX_TO_DATE(_end), 1),
+
+        start_month, TEXT(start_date, "mmmm"),
+        end_month, TEXT(end_date, "mmmm"),
+        start_day, DAY(start_date),
+        end_day, DAY(end_date),
+        start_year, YEAR(start_date),
+        end_year, YEAR(end_date),
+
+        same_day, start_date = end_date,
+        same_month, AND(start_year = end_year, MONTH(start_date) = MONTH(end_date)),
+        same_year, start_year = end_year,
+
+        ndash, UNICHAR(8211),
+
+        result, IF(same_day, start_month & " " & start_day & ", " & start_year,
+            IF(same_month, start_month & " " & start_day & ndash & end_day & ", " & start_year,
+            IF(same_year, start_month & " " & start_day & " " & ndash & " " & end_month & " " & end_day & ", " & start_year,
+            start_month & " " & start_day & ", " & start_year & " " & ndash & " " & end_month & " " & end_day & ", " & end_year))),
+
+        result
+    )
+)
+
+================================================================================
+USAGE EXAMPLES (after installing all functions)
+================================================================================
+
+In any cell, you can now use:
+
+  =WW_TIMEAGO(1704067110, 1704067200)
+  → "2 minutes ago"
+
+  =WW_DURATION(3661)
+  → "1 hour, 1 minute"
+
+  =WW_DURATION(3661, TRUE)
+  → "1h 1m"
+
+  =WW_PARSE_DURATION("2h 30m")
+  → 9000
+
+  =WW_HUMAN_DATE(1705190400, 1705276800)
+  → "Yesterday"
+
+  =WW_DATE_RANGE(1705276800, 1705881600)
+  → "January 15–22, 2024"
+
+================================================================================

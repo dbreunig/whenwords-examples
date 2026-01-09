@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/master.swiftdeps"
+  },
+  "/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift": {
+    "dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.d",
+    "object": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o",
+    "swiftmodule": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords~partial.swiftmodule",
+    "swift-dependencies": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swiftdeps",
+    "diagnostics": "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.dia"
+  }
+}

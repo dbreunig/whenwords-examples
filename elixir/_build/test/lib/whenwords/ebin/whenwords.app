@@ -1,0 +1,1 @@
+{application,whenwords,[{modules,['Elixir.Whenwords']},{optional_applications,[]},{applications,[kernel,stdlib,elixir,logger,yaml_elixir]},{description,"whenwords"},{registered,[]},{vsn,"0.1.0"}]}.

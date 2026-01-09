@@ -1,0 +1,109 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "Whenwords-arm64-apple-macosx15.0-debug.module": ["<Whenwords-arm64-apple-macosx15.0-debug.module>"]
+  "WhenwordsTests-arm64-apple-macosx15.0-debug.module": ["<WhenwordsTests-arm64-apple-macosx15.0-debug.module>"]
+  "main": ["<Whenwords-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<Whenwords-arm64-apple-macosx15.0-debug.module>","<WhenwordsTests-arm64-apple-macosx15.0-debug.module>","<whenwordsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+  "whenwordsPackageTests-arm64-apple-macosx15.0-debug.module": ["<whenwordsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+  "whenwordsPackageTests-arm64-apple-macosx15.0-debug.test": ["<whenwordsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+default: "main"
+nodes:
+  "/Users/dbreunig/Development/whenwords/examples/swift/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources"]
+    description: "Write auxiliary file /Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources"
+
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources"]
+    description: "Write auxiliary file /Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources"
+
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources"
+
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift"]
+
+  "/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList"
+
+  "<Whenwords-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule"]
+    outputs: ["<Whenwords-arm64-apple-macosx15.0-debug.module>"]
+
+  "<WhenwordsTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule"]
+    outputs: ["<WhenwordsTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "<whenwordsPackageTests-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule"]
+    outputs: ["<whenwordsPackageTests-arm64-apple-macosx15.0-debug.module>"]
+
+  "<whenwordsPackageTests-arm64-apple-macosx15.0-debug.test>":
+    tool: phony
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.xctest/Contents/MacOS/whenwordsPackageTests"]
+    outputs: ["<whenwordsPackageTests-arm64-apple-macosx15.0-debug.test>"]
+
+  "C.Whenwords-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/Whenwords.swift","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule"]
+    description: "Compiling Swift Module 'Whenwords' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","Whenwords","-emit-dependencies","-emit-module","-emit-module-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule","-output-file-map","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/sources","-I","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/include/Whenwords-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.WhenwordsTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/WhenwordsTests.swift","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule"]
+    description: "Compiling Swift Module 'WhenwordsTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","WhenwordsTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule","-output-file-map","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/sources","-I","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.whenwordsPackageTests-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.derived/runner.swift","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'whenwordsPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","whenwordsPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule","-output-file-map","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/sources","-I","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/include/whenwordsPackageTests-Swift.h","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.whenwordsPackageTests-arm64-apple-macosx15.0-debug.test":
+    tool: shell
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Whenwords.build/Whenwords.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/WhenwordsTests.build/WhenwordsTests.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.build/runner.swift.o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.xctest/Contents/MacOS/whenwordsPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/whenwordsPackageTests.xctest/Contents/MacOS/whenwordsPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug","-o","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.xctest/Contents/MacOS/whenwordsPackageTests","-module-name","whenwordsPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/whenwordsPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/Whenwords.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/WhenwordsTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/dbreunig/Development/whenwords/examples/swift/.build/arm64-apple-macosx/debug/Modules/whenwordsPackageTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/dbreunig/Development/whenwords/examples/swift/","/Users/dbreunig/Development/whenwords/examples/swift/","/Users/dbreunig/Development/whenwords/examples/swift/Package.swift","/Users/dbreunig/Development/whenwords/examples/swift/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
