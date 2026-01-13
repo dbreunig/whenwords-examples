@@ -1,0 +1,13 @@
+{
+  "name": "whenwords-node",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "description": "Local implementation of whenwords library (non-publish)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "devDependencies": {
+    "yaml": "^2.4.2"
+  }
+}
