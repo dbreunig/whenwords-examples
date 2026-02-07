@@ -1,0 +1,12 @@
+{
+  "name": "whenwords",
+  "url": "https://github.com/dbreunig/whenwords",
+  "license": "MIT",
+  "tags": ["time", "date", "formatting", "parsing", "duration", "timeago", "humanize"],
+  "description": "Human-friendly time formatting and parsing library. Converts timestamps to readable strings like '3 hours ago' and parses duration strings like '2h 30m' into seconds.",
+  "version": "0.1.0",
+  "releasenote": "Initial release with timeago, duration, parseDuration, humanDate, and dateRange functions",
+  "contributors": ["claude","cmnemoi", "dbreunig"],
+  "classPath": ".",
+  "dependencies": {}
+}

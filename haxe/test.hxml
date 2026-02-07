@@ -1,0 +1,4 @@
+-cp .
+-main TestRunner
+-lib utest
+--interp
